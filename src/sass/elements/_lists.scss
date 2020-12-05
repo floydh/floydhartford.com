@@ -1,0 +1,34 @@
+ul,
+ol {
+	padding-left: $gutter;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+	font-size: 1.6rem;
+	margin: 12px auto;
+	transition: all 0.3s linear;
+}
+
+@media only screen and (min-width: 768px) {
+	li {
+		font-size: 1.7rem;
+		margin: 8px auto;
+	}	
+}
+
+li > ol {
+	margin: 8px auto;
+}

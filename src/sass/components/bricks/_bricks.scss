@@ -1,0 +1,32 @@
+.bricks {
+	margin: 20px auto;
+	position: relative;
+}
+
+.bricks__items {
+	margin: 0 -6px;
+}
+
+.bricks__items,
+.article__content--page-about ul:first-of-type {
+	list-style: none;
+	padding: 0;
+}
+
+.bricks__item,
+.article__content--page-about ul:first-of-type li {
+	display: inline-block;
+	background-color: #f5fbfd;
+	border: 1px solid #80cff7;
+	margin: 6px;
+	padding: 4px 8px;
+	line-height: 1;
+	white-space: nowrap;
+	transition: all 0.3s linear;
+}
+
+.bricks__item:hover,
+.article__content--page-about ul:first-of-type li:hover {
+	background: #9ee6fd;
+	cursor: pointer;
+}

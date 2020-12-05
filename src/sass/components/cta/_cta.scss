@@ -1,0 +1,99 @@
+.call-to-action {
+	position: relative;
+	margin: 40px 0 25px;
+}
+
+@media only screen and (min-width: 768px) {
+	.call-to-action {
+		margin: 60px 0 25px;
+	}
+}
+
+.call-to-action__link,
+.call-to-action__link:link,
+.call-to-action__link:visited,
+.call-to-action__link:hover,
+.call-to-action__link:focus {
+	display: block;
+	text-decoration: none;
+}
+
+.call-to-action__button,
+.call-to-action__button:link,
+.call-to-action__button:visited,
+.call-to-action__button:hover,
+.call-to-action__button:focus {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	padding: 20px 60px;
+	background-color: #0f92d3;
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid #222;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-variant: small-caps;
+	font-family: 'Open Sans', sans-serif;
+	transition: all 0.3s linear;
+}
+
+.call-to-action__button:hover {
+	background-color: #005077;
+}
+
+.call-to-action__btn,
+.call-to-action__btn-2 {
+  width: auto;
+  height: auto;
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 100px;
+  color: rgba(255,255,255,0.9);
+  border-radius: 50px;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  -webkit-animation: anime 16s linear infinite;
+          animation: anime 16s linear infinite;
+	box-shadow: 3px 8px 32px rgba(0,0,0,0.4);
+}
+
+.call-to-action__btn:hover {
+	background: #0f92d3;
+}
+
+.call-to-action__btn-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: -70px;
+  z-index: -1;
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+  opacity: 0.8;
+}
+
+@-webkit-keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

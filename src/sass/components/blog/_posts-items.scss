@@ -1,0 +1,29 @@
+.posts__items {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.posts__item {
+	margin: 10px auto 24px;
+    padding: 10px 10px 10px 50px;
+    border: 1px solid #c7c7c7;
+    transition: all 0.3s linear;
+    background-image: url(/img/icons/article.svg);
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+}
+
+.posts__item:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+.posts__item:hover {
+    background-color: #deeffd;
+}
+
+.posts__item-title {
+	font-size: 1.7rem;
+	margin: 0 auto 6px;
+}

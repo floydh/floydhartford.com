@@ -1,0 +1,17 @@
+.banner {
+	z-index: 0;
+}
+
+@include bp-medium() {
+	.banner {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		flex-flow: row nowrap;
+		padding: $gutter;
+	}	
+}
+
+.branding {
+	flex: auto;
+}

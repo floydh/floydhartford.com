@@ -1,0 +1,11 @@
+
+code {
+	display: inline-block;
+	border: 1px solid darken($gray, 10%);
+	background: #eaeaea;
+	color: $black;
+	padding: 0 $gutter;
+	font-family: Courier, 'New Courier', monospace;
+	font-size: 0.75em;
+	white-space: nowrap;
+}

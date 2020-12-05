@@ -1,0 +1,26 @@
+
+.section {
+	position: relative;
+	margin: 0;
+	padding: 0 2.5vw;
+}
+
+.section__inner {
+	width: 100%;
+	max-width: $siteWidth;
+	margin: 0 auto;
+}
+
+.section--full-width {
+	margin: 0 -2.5vw;
+}
+
+.section--full-width .section__inner {
+	padding: 0 2.5vw;
+}
+
+.section--full-height {
+	@include bp-medium() {
+		min-height: 100vh;
+	}
+}

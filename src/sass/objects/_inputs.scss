@@ -1,0 +1,110 @@
+.input-field {
+	position: relative;
+}
+
+.input-field--inline {
+	display: inline-block;
+}
+
+.input-field + .input-field {
+	margin-top: 1.25em;
+}
+
+.input-field__label,
+.input-group__legend {
+	font-weight: 700;
+}
+
+.input-field__input-wrapper {
+	position: relative;
+	margin-top: 0.5em;
+}
+
+.input-field__input {
+	width: 100%;
+	padding: 4px 6px;
+}
+
+.input-field__textarea {
+	width: 100%;
+	min-height: 40px;
+	padding: 4px 6px;
+}
+
+.input-field--inline-label {
+	display: flex;
+	flex-flow: row no-wrap;
+	align-items: center;
+
+	.input-field__label {
+		flex: 0 0 auto;
+	}
+
+	.input-field__input-wrapper {
+		flex: 1 1 auto;
+		margin: 0;
+		padding-left: 1em;
+	}
+}
+
+.input-field--required {
+	.input-field__label {
+		color: red;
+	}
+
+	.input-field__label::before {
+		display: inline;
+		content: '*';
+	}
+
+	.input-field__input-wrapper::after {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background: red;
+	}
+}
+
+.input-group__legend {
+	display: block;
+	margin-bottom: ($gutter / 2);
+}
+
+.input-field__label--checkbox,
+.input-field__label--radio {
+	display: block;
+	font-weight: 400;
+	padding-left: 15px;
+	text-indent: -15px;
+}
+
+.input-field__checkbox {
+	width: 13px;
+	height: 13px;
+	padding: 0;
+	margin: 0;
+	vertical-align: bottom;
+	position: relative;
+	top: -0.215em;
+}
+
+.input-group--inline {
+	margin-left: (-$gutter);
+	margin-right: (-$gutter);
+	@include clearfix();
+
+	.input-group__legend {
+		padding: 0 $gutter;
+		margin: 0;
+	}
+
+	.input-field--checkbox {
+		float: left;
+		padding: ($gutter / 2) $gutter;
+	}
+
+	.input-field--radio {
+		float: left;
+		padding: ($gutter / 2) $gutter;
+	}
+}

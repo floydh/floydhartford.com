@@ -1,0 +1,35 @@
+
+.table {
+	width: 100%;
+}
+
+.table--boxed-cells {
+	.table__header-cell + .table__header-cell {
+		border-left: 1px solid $white;
+	}
+
+	.table__body-cell {
+		border: 1px solid $lightGray;
+	}
+}
+
+.table__header-cell {
+	background: #333;
+	color: $white;
+}
+
+.table__body-row {
+	vertical-align: top;
+}
+
+.table__body-row {
+	background: transparent;
+}
+
+.table__body-row:nth-child(odd) {
+	background: #EAEAEA;
+}
+
+.table__body-cell {
+	padding: $gutter;
+}

@@ -1,0 +1,19 @@
+
+.link {
+	&.link--inverse {
+		color: #fff;
+
+		&:link,
+		&:visited,
+		&:active {
+			color: #fff;
+			text-decoration: underline;
+		}
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			text-decoration: underline;
+		}
+	}
+}

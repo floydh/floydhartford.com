@@ -1,0 +1,21 @@
+
+table {
+	margin: 1em 0;
+	border: 0 none;
+	border-collapse: collapse;
+}
+
+tr {
+	text-align: left;
+}
+
+th {
+	vertical-align: middle;
+	padding: ($gutter / 2) $gutter;
+	font-weight: 700;
+}
+
+td {
+	vertical-align: top;
+	padding: ($gutter / 2) $gutter;
+}

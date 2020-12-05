@@ -1,0 +1,20 @@
+
+.form {
+	margin: 40px auto;
+	@include clearfix();
+}
+
+.form__fields {
+	margin: 25px auto;
+	@include clearfix();
+}
+
+.form__fieldset,
+.form__field-group {
+	@include clearfix();
+}
+
+.form__actions {
+	margin: 25px auto;
+	@include clearfix();
+}

@@ -1,0 +1,211 @@
+
+.button-group {
+	margin: $gutter 0;
+}
+
+.buttons-group {
+	@extend .button-group;
+	@include clearfix();
+}
+
+.buttons-group--centered {
+	text-align: center;
+}
+
+.button-group--flat {
+	margin: 0;
+}
+
+.button-group--inline {
+	display: inline-block;
+}
+
+.button {
+	display: inline-block;
+	padding: 0 1.75em;
+	text-transform: uppercase;
+	color: $white;
+	border: 1px solid $gray;
+	border-raidus: 3px;
+	background-color: $gray;
+	margin: $gutter 0 0 $gutter;
+	font-weight: 700;
+	font-size: 1.125em;
+	line-height: 42px;
+	transition: background-color 0.2s linear, border-color 0.2s linear, color 0.2s linear;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:focus,
+	&:active {
+		color: $white;
+		text-decoration: none;
+		background-color: $gray;
+	}
+
+	&:hover {
+		background-color: darken($gray, 30%);
+		border-color: darken($gray, 30%);
+	}
+}
+
+.button--slim {
+	font-size: 1em;
+	padding: 0 1.25em;
+	line-height: 30px;
+}
+
+.button--primary {
+	background-color: $lightBlue;
+	border-color: $lightBlue;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: $lightBlue;
+		border-color: $lightBlue;
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-color: $darkBlue;
+		background-color: $darkBlue;
+	}
+}
+
+.button--secondary {
+	background-color: $darkBlue;
+	border-color: $darkBlue;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:focus,
+	&:active {
+		color: $white;
+		background-color: $darkBlue;
+		border-color: $darkBlue;
+	}
+
+	&:hover {
+		color: $white;
+		border-color: $white;
+		background-color: transparent;
+	}
+}
+
+.button--outline-alt {
+	background-color: transparent;
+	border-color: $white;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: transparent;
+		border-color: $white;
+	}
+
+	&:hover {
+		border-color: $lightBlue;
+		background-color: $lightBlue;
+	}
+}
+
+.button--large {
+	font-size: 1.25em;
+
+	@include bp-medium() {
+		font-size: 32px;
+	}
+}
+
+.button--no-margin-left {
+	margin-left: 0;
+}
+
+.button--no-margin-top {
+	margin-top: 0;
+}
+
+.button--no-margin {
+	margin: 0;
+}
+
+.btn {
+	border: 1px solid #c4c4c4;
+	display: inline-block;
+	color: #ffffff;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 12px 2.5em;
+	font-weight: 700;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color 0.3s linear;
+}
+
+.btn,
+.btn:visited,
+.btn:active,
+.btn:focus {
+	color: #444;
+	text-decoration:none;
+	background-color: #eaeaea;
+}
+
+.btn:hover {
+	background-color: #dadada;
+	color: #444;
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
+	color: #444;
+}
+
+.btn--primary {
+	border:1px solid #076fff;
+}
+
+.btn--primary,
+.btn--primary:link,
+.btn--primary:visited,
+.btn--primary:focus,
+.btn--primary:active {
+	color: #fff;
+	transition: background-color 0.3s linear;
+	background-color: #076fff;
+}
+
+.btn--primary:hover {
+	background-color: #0648a5;
+	color: #fff;
+}
+
+.btn--outline {
+	border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn--outline,
+.btn--outline:link,
+.btn--outline:visited,
+.btn--outline:focus,
+.btn--outline:active {
+	color: #fff;
+	transition: background 0.3s linear, border 0.3s linear;
+	background-color: transparent;
+}
+
+.btn--outline:hover {
+	background-color: #076fff;
+	background-color: rgba(0,0,0,0.35);
+	border: 1px solid #0648a5;
+	border: 1px solid #fff;
+	color: #fff;
+}

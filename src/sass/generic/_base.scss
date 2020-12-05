@@ -1,0 +1,24 @@
+
+/* Set Vertical Rhythm for Typography: https://www.gridlover.net/try */
+html,
+body {
+	position: relative;
+	min-height: 100%;
+	margin: 0;
+	background: $white;
+	z-index: 0;
+	text-align: center;
+}
+
+html {
+	font-size: $adjustedFontSize;
+	line-height: 1.375;
+	height: 100%;
+}
+
+body {
+	font-size: 100%;
+	line-height: 1.375;
+	font-family: $sans-serif;
+	color: $darkGray;
+}

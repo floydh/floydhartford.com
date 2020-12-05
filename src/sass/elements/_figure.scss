@@ -1,0 +1,14 @@
+figure {
+	margin: $gutter 0;
+	padding: 0;
+}
+
+figcaption {
+	text-align: center;
+	font-size: 1.6rem;
+	margin: 0 ($gutter / 2);
+}
+
+figure img + figcaption {
+	margin-top: $gutter;
+}

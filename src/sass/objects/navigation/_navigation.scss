@@ -1,0 +1,10 @@
+.navigation {
+	flex: auto;
+	margin: 10px -20px 0;
+}
+
+@media only screen and (min-width: 768px) {
+	.navigation {
+		margin: 0 auto;
+	}
+}

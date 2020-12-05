@@ -1,0 +1,13 @@
+pre {
+	position: relative;
+	display: block;
+	font-family: Courier, 'New Courier', monospace;
+	font-family: monospace;
+    margin: 20px auto;
+	background: #e8e8e8;
+    border: 1px solid #0f92d3;
+	font-size: 1.6rem;
+    padding: ($gutter * 2) $gutter;
+	font-family: monospace;
+	overflow-x: scroll;
+}

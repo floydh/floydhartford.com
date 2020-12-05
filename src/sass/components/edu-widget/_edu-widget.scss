@@ -1,0 +1,28 @@
+.edu {
+	width: 640px;
+	max-width: 100%;
+	margin: 30px auto;
+    border: 1px solid #c7c7c7;
+    padding: 6px 10px 10px;
+}
+
+.edu__logo {
+	margin: 10px auto;
+}
+
+.edu__logo img {
+	width: 180px;
+	margin: 0 auto 0 0;
+}
+
+.edu__title {
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	font-weight: 700;
+	border-bottom: 1px solid #c7c7c7;
+}
+
+.edu__caption {
+	font-size: 1.3rem;
+	margin: 0 5px;
+}

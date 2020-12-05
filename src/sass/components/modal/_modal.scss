@@ -1,0 +1,76 @@
+.modal {
+	position: fixed;
+	z-index: 99999;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	width: 100%;
+	height: 100vh;
+}
+
+.modal__inner {
+	position: relative;
+	width: 680px;
+	max-width: 95%;
+	top: 5vh;
+	bottom: auto;
+	left: 50%;
+	right: auto;
+	transform: translateX(-50%);
+}
+
+.modal__content {
+	position: relative;
+	width: 100%;
+	text-align: left;
+	background-color: #fff;
+	padding: 20px;
+	border: 6px solid #0f92d3;
+	border-radius: 8px;
+	overflow-y: scroll;
+	max-height: 90vh;
+}
+
+.modal__content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.modal__content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.modal__close {
+	position: fixed;
+	z-index: 2;
+	top: 5px;
+	left: auto;
+	right: 5px;
+}
+
+.modal__close-btn,
+.modal__close-btn:link,
+.modal__close-btn:hover,
+.modal__close-btn:visited,
+.modal__close-btn:active {
+	display: block;
+	text-decoration: none;
+	background-color: #ea0000;
+	color: #fff;
+	font-weight: 700;
+	padding: 10px;
+	border-bottom-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.modal__close-btn:hover {
+	background-color: #c10606;
+}

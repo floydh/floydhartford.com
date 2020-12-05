@@ -1,0 +1,26 @@
+
+blockquote {
+  width: 100%;
+  margin: 30px auto;
+  box-sizing: border-box;
+  padding: $gutter $gutter $gutter 50px;
+  border-left:8px solid $lightBlue;
+  border-right: 3px solid $lightBlue;
+  box-shadow: 2px 2px 15px #ccc;
+  position: relative;
+  color: #2c3e50;
+  text-align: justify;
+  font-family: "Georgia";
+  font-size: 1.25em;
+}
+
+  blockquote::before {
+  content: "\201C";
+  position: absolute;
+  font-size: 60px;
+  font-weight: 900;
+  color: #757575;
+  left:10px;
+  top: 16px;
+  line-height: 1;
+}

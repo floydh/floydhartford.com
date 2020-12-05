@@ -1,0 +1,19 @@
+
+a {
+	color: $lightBlue;
+
+	&:link,
+	&:visited,
+	&:focus,
+	&:active,
+	&:hover {
+		color: $lightBlue;
+		text-decoration: underline;
+		background-color: transparent;
+	}
+
+	&:hover {
+		color: #a20000;
+		color: darken($lightBlue, 10%);
+	}
+}

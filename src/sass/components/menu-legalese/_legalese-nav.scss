@@ -1,0 +1,11 @@
+.legalese-nav {
+	display: block;
+	margin-top: 6px;
+}
+
+@include bp-medium() {
+	.legalese-nav {
+		display: inline;
+		margin: auto;
+	}
+}

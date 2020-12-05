@@ -1,0 +1,89 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headlineFont;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 auto;
+  transition: all 0.3s linear;
+}
+
+h1, .h1 {
+  font-size: 3.8rem;
+}
+
+h2, .h2 {
+  font-size: 2.4rem;
+  margin: 30px auto 18px;
+}
+
+@include bp-medium() {
+  h2 {
+    font-size: 3rem;
+    margin: 40px auto 20px;
+  }
+}
+
+h3, .h3 {
+  font-size: 2.1rem;
+  margin: 30px auto 10px;
+}
+
+@include bp-medium() {
+  h3 {
+    font-size: 2.3rem;
+    margin: 40px auto 20px;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.8rem;
+}
+
+h5, .h5 {
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1.6rem;
+  transition: all 0.3s linear;
+}
+
+@include bp-medium() {
+  p {
+    font-size: 1.7rem;
+  }
+}
+
+hr,
+.hr {
+  border: 1px solid;
+  margin: -1px 0;
+  border-color: #c0c0c0;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}

@@ -1,0 +1,41 @@
+/**
+- Create a grid by passing in the rows as a fraction of the total $columns.
+- Usage: @include grid-row(3 9) || @include grid-row(4 4 4) ... etc.
+**/
+@mixin grid-row($args, $columns: $columns) {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  
+  &::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  
+  @for $i from 1 to (length($args) + 1) {
+    > .col:nth-child(#{$i}) {
+      flex: 0 0 auto;
+      width: ((100% / $columns)) * nth($args, $i);
+    }
+  }
+}
+
+@mixin grid-uniform($args, $columns: $columns) {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  
+  &::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  
+  > * {
+    flex: 0 0 auto;
+    width: ((100% / $args));
+  }
+}

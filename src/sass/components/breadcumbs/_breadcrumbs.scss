@@ -1,0 +1,21 @@
+.breadcrumbs {
+	margin: 20px 0;
+	font-size: 13px;
+	padding: 0;
+}
+
+.breadcrumbs__items {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.breadcrumbs__item {
+	display: inline-block;
+	margin: 0 0 0 3px;
+	padding: 0;
+}
+
+.breadcrumbs__item:first-child {
+	margin-left: 0;
+}

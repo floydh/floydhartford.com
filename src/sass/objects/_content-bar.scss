@@ -1,0 +1,7 @@
+
+.content-bar {
+	width: 100%;
+	position: relative;
+
+	@include layoutPadding();
+}

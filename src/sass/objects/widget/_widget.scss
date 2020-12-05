@@ -1,0 +1,45 @@
+
+.widget {
+	@include clearfix();
+	margin: 2em 0;
+}
+
+.widget:first-child {
+	margin-top: 0;
+}
+
+.widget__title {
+	font-size: 1.125em;
+	font-weight: 600;
+	margin: 0 0 10px;
+}
+
+.widget__content > ul {
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+.widget a {
+	&:link,
+	&:visited,
+	&:active,
+	&:focus,
+	&:hover {
+		color: #898989;
+	}
+
+	&:hover {
+		color: $lightBlue;
+	}
+}
+
+.widget_media_image {
+	a {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+	}
+}
