@@ -29,13 +29,14 @@
 }
 
 .cookie-consent__btn,
+.cookie-consent__btn:link,
 .cookie-consent__btn:visited,
 .cookie-consent__btn:active,
 .cookie-consent__btn:focus,
 .cookie-consent__btn:hover {
 	display: block;
 	text-decoration: none;
-	background-color: #0f92d3;
+	background: #0f92d3;
     color: #fff;
     padding: 10px 15px;
     text-align: center;
@@ -47,15 +48,16 @@
 
 .cookie-consent__btn:hover {
     color: #fff;
-	background-color: #00afc2;
+	background: #00afc2;
 }
 
 .cookie-consent__btn--no,
+.cookie-consent__btn--no:link,
 .cookie-consent__btn--no:visited,
 .cookie-consent__btn--no:active,
 .cookie-consent__btn--no:focus,
 .cookie-consent__btn--no:hover {
-	background-color: #cacaca;
+	background: #cacaca;
 	color: #0f92d3;
 }
 
