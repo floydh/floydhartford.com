@@ -6,15 +6,15 @@ const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const webpack = require('webpack-stream');
 sass.compiler = require('node-sass');
 
-// Cleans the build directory
 async function clean(cb) {
 	await del(destination);
 	cb();
 }
 
-// Compiles the Sass
 function scss(cb) {
 	var sassOptions = {outputStyle: 'compressed'};
 	src('./src/sass/**/*.scss')
@@ -24,19 +24,37 @@ function scss(cb) {
     cb();
 }
 
-// Moves the PHP files from the public root
-function php(cb) {
-	src('./src/**/*.php')
+function files(cb) {
+	src(['./src/**/*.php', './src/.htaccess','./src/sitemap_index.xml'])
 	.pipe(dest('./build/'));
 
 	cb();
 }
 
-// Moves the JS files from the /js/ directory
 function js(cb) {
-	src('./src/js/**/*.js')
+	src('./src/js/scripts.js')
+	.pipe(babel({
+            presets: ['@babel/env']
+        }))
+	.pipe(webpack({
+		output: {
+			'filename': 'bundled.js'
+		}
+	}))
+	.pipe(dest('./src/js/'))
 	.pipe(dest('./build/js/'));
 
+	cb();
+}
+
+function webpacking(cb) {
+	src('./src/js/scripts.js')
+	.pipe(webpack({
+		output: {
+			'filename': 'bundled.js'
+		}
+	}))
+	.pipe(dest('./src/js/'));
 	cb();
 }
 
@@ -58,10 +76,11 @@ function css(cb) {
 	cb();
 }
 
-exports.php = php;
+exports.files = files;
 exports.js = js;
 exports.img = img;
 exports.scss = scss;
+exports.webpacking = webpacking;
 
 exports.styles = series(scss, css);
-exports.default = series(clean, parallel(php, js, css, img));
+exports.default = series(clean, parallel(files, css, js, img));
