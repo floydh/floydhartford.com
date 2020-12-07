@@ -9,6 +9,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
 const sourcemaps = require('gulp-sourcemaps');
+const cssmin = require('gulp-cssnano');
+const rename = require('gulp-rename');
 sass.compiler = require('node-sass');
 
 async function clean(cb) {
@@ -16,12 +18,21 @@ async function clean(cb) {
 	cb();
 }
 
-function scss(cb) {
-	var sassOptions = {outputStyle: 'compressed'};
+// const sassOptions = {outputStyle: 'compressed'};
+const sassOptions = {outputStyle: 'expanded'};
+
+function styles(cb) {
+	
 	src('./src/sass/**/*.scss')
-  	 .pipe(sassGlob())
+  	.pipe(sourcemaps.init())
+  	.pipe(sassGlob())
     .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(dest('./src/css'));
+    .pipe(autoprefixer())
+    .pipe(rename('styles.css'))
+    .pipe(dest('./src/css'))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(dest('./build/css'));
     cb();
 }
 
@@ -82,19 +93,8 @@ function img(cb) {
 	cb();
 }
 
-// Moves the CSS file(s)
-function css(cb) {
-	src('./src/css/**/*.css')
-	.pipe(autoprefixer({cascade: false}))
-	.pipe(dest('./build/css/'));
-
-	cb();
-}
-
+exports.styles = styles;
 exports.files = files;
 exports.js = js;
 exports.img = img;
-exports.scss = scss;
-
-exports.styles = series(scss, css);
-exports.default = series(clean, parallel(files, css, js, img));
+exports.default = series(clean, parallel(files, js, img), series(styles));
