@@ -50,6 +50,7 @@ h5, .h5 {
 p {
   font-size: 1.6rem;
   transition: all 0.3s linear;
+  margin: 18px auto;
 }
 
 @include bp-medium() {

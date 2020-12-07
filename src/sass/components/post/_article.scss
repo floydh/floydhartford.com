@@ -6,7 +6,7 @@
 	.article--home {
 		display: flex;
 		flex-flow: row nowrap;
-		align-items: stretch;
+		align-items: flex-start;
 		justify-content: space-between;
 	}
 }
