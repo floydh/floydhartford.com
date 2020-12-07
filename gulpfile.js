@@ -8,6 +8,7 @@ const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
+const sourcemaps = require('gulp-sourcemaps');
 sass.compiler = require('node-sass');
 
 async function clean(cb) {
@@ -31,30 +32,44 @@ function files(cb) {
 	cb();
 }
 
+// Take the JS scripts.js file
+// Babel it and webpack it
 function js(cb) {
 	src('./src/js/scripts.js')
+	.pipe(sourcemaps.init())
 	.pipe(babel({
-            presets: ['@babel/env']
-        }))
+		  "comments": false,
+		  "presets": [
+		    [
+		      "@babel/env",
+		      {
+		        "targets": {
+		          "edge": "17",
+		          "firefox": "60",
+		          "chrome": "67",
+		          "safari": "11.1",
+		        },
+		        "useBuiltIns": "usage",
+		        "corejs": "3.6.5",
+		      }
+		    ]
+		  ]
+		}))
 	.pipe(webpack({
+		mode: 'development',
 		output: {
-			'filename': 'bundled.js'
+			'filename': 'build.js'
 		}
 	}))
+	.pipe(sourcemaps.write('.'))
 	.pipe(dest('./src/js/'))
-	.pipe(dest('./build/js/'));
-
-	cb();
-}
-
-function webpacking(cb) {
-	src('./src/js/scripts.js')
 	.pipe(webpack({
+		mode: 'production',
 		output: {
-			'filename': 'bundled.js'
+			'filename': 'build.js'
 		}
 	}))
-	.pipe(dest('./src/js/'));
+	.pipe(dest('./build/js/'));
 	cb();
 }
 
@@ -80,7 +95,6 @@ exports.files = files;
 exports.js = js;
 exports.img = img;
 exports.scss = scss;
-exports.webpacking = webpacking;
 
 exports.styles = series(scss, css);
 exports.default = series(clean, parallel(files, css, js, img));
