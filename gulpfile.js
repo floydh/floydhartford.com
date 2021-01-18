@@ -11,6 +11,8 @@ const webpack = require('webpack-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const cssmin = require('gulp-cssnano');
 const rename = require('gulp-rename');
+const jp2 = require('gulp-jpeg-2000');
+
 sass.compiler = require('node-sass');
 
 async function clean(cb) {
@@ -36,6 +38,19 @@ function styles(cb) {
     cb();
 }
 
+function stylesDev(cb) {
+	
+	src('./src/sass/**/*.scss')
+  	.pipe(sourcemaps.init())
+  	.pipe(sassGlob())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(rename('styles.css'))
+    .pipe(dest('./src/css'));
+
+    cb();
+}
+
 function files(cb) {
 	src(['./src/**/*.php', './src/.htaccess','./src/sitemap_index.xml'])
 	.pipe(dest('./build/'));
@@ -43,10 +58,25 @@ function files(cb) {
 	cb();
 }
 
+
 // Take the JS scripts.js file
+function jsVendor(cb) {
+	src(['./src/js/vendor/**/*.js'])
+	.pipe(dest('./build/js/vendor/'));
+
+	cb();
+}
+
 // Babel it and webpack it
 function js(cb) {
-	src('./src/js/scripts.js')
+	// src([
+	// 	'node_modules/masonry-layout/dist/masonry.pkgd.js',
+	// 	'node_modules/imagesloaded/imagesloaded.pkgd.js',
+	// ])
+	// .pipe(dest('./src/js/'));
+
+	src(['./src/js/scripts.js'])
+	// .pipe(concat('bundledconcat.js'))
 	.pipe(sourcemaps.init())
 	.pipe(babel({
 		  "comments": false,
@@ -93,8 +123,26 @@ function img(cb) {
 	cb();
 }
 
+function imgNextGen(cb) {
+	src('./build/img/**/*.{jpg,jpeg,png}')
+    .pipe(jp2())
+    .pipe(dest('./build/img/'))
+}
+
+
+function watcher(cb) {
+	watch(['src/sass/**/*.scss'], stylesDev);
+	watch(['src/js/scripts.js'], js);
+	watch(['src/*.php']);
+
+	cb();
+}
+
+exports.watcher = watcher;
 exports.styles = styles;
 exports.files = files;
 exports.js = js;
+exports.jsVendor = jsVendor;
 exports.img = img;
-exports.default = series(clean, parallel(files, js, img), series(styles));
+exports.imgNextGen = img;
+exports.default = series(clean, parallel(files, js, img), series(styles), series(imgNextGen));

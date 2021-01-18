@@ -1,32 +1,24 @@
 .navigation__toggle {
-	position: absolute;
-	top: 3px;
-	left: auto;
-	right: 20px;
-	bottom: auto;
-}
-
-.mobile-nav-toggle {
-	display: block;
-}
-
-@include bp-medium() {
-	.mobile-nav-toggle {
-		display: none;
-	}
+	position: relative;
+	z-index: 2;
 }
 
 .primary__nav {
-	position: relative;
+	position: absolute;
+	z-index: 0;
 	display: none;
 	text-align: left;
-	background: transparent;
+	background-color: #fff;
+	margin: 60px -20px 0;
+	width: 100vw;
 }
 
 @include bp-medium() {
 	.primary__nav {
-		display: block;
-		text-align: right;
+		position: relative;
+		width: auto;
+		margin: 0 0 0 30px;
+		background-color: transparent;
 	}
 }
 
@@ -42,7 +34,8 @@
 	margin: 0;
 	padding: 0;
 	display: block;
-	border-top: 1px solid #c7c7c7;
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #c7c7c7;
 }
 
 @include bp-medium() {
@@ -50,6 +43,7 @@
 		display: inline-block;
 		margin-top: 2px;
 		border-top: 0 none;
+		border-bottom: 0 none;
 	}
 	.primary__menu-item:first-child .primary__menu-link {
 		padding-left: 0;

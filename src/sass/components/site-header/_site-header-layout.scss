@@ -1,17 +1,48 @@
 .banner {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-flow: row nowrap;
+	padding: $gutter;
 	z-index: 0;
 }
 
+.primary-navigation {
+	position: relative;
+	margin: 0;
+	padding: 8px 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-flow: row nowrap;
+	padding: 0;
+	flex: 0 1 auto;
+	transition: all 0.3s linear;
+}
+
 @include bp-medium() {
-	.banner {
-		display: flex;
-		justify-content: space-between;
-		align-items: stretch;
-		flex-flow: row nowrap;
-		padding: $gutter;
-	}	
+	.primary-navigation {
+		align-items: center;
+	}
 }
 
 .branding {
 	flex: auto;
+	padding: 0 1.5em;
+	text-align: center;
+}
+
+.social-media {
+	position: absolute;
+	top: 15px;
+	left: auto;
+	right: 2em;
+	bottom: auto;
+	transition: all 0.3s linear;
+	position: relative;
+	top: auto;
+	right: auto;
+	flex: 0 1 auto;
+	padding-top: 0.7em;
 }

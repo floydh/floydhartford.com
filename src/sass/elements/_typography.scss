@@ -33,7 +33,7 @@ h3, .h3 {
 }
 
 @include bp-medium() {
-  h3 {
+  h3, .h3 {
     font-size: 2.3rem;
     margin: 40px auto 20px;
   }
@@ -41,6 +41,13 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: 1.8rem;
+  margin: 30px auto 10px;
+}
+
+@include bp-medium() {
+  h4, .h4 {
+    margin: 40px auto 20px;
+  }
 }
 
 h5, .h5 {
@@ -51,6 +58,7 @@ p {
   font-size: 1.6rem;
   transition: all 0.3s linear;
   margin: 18px auto;
+  line-height: 1.879;
 }
 
 @include bp-medium() {

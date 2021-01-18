@@ -2,32 +2,10 @@
 	position: relative;
 }
 
-@include bp-medium(){
-	.article--home {
-		display: flex;
-		flex-flow: row nowrap;
-		align-items: flex-start;
-		justify-content: space-between;
-	}
-}
-
 .article__title {
 	display: block;
 	position: relative;
 	padding: 12px 0;
-}
-
-.article__content--home {
-	padding: 10px 0 0;
-	transition: padding 0.3s linear;
-}
-
-@include bp-medium(){
-	.article__content--home {
-		flex: 1 80%;
-		width: 80%;
-		padding: 0 60px 0 5%;
-	}
 }
 
 .article__content--page-portfolio .image {

@@ -1,0 +1,22 @@
+.social-media__link {
+	display: block;
+	width: 3.2em;
+	transition: opacity 0.3s linear;
+
+	&:link,
+	&:visited {
+		opacity: 0.5;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+}
+
+.social-media__link svg,
+.social-media__icon {
+	display: block;
+	width: 100%;
+	height: auto;
+}

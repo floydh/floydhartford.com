@@ -9,3 +9,10 @@ code {
 	font-size: 0.75em;
 	white-space: nowrap;
 }
+
+pre > code {
+	display: block;
+	white-space: pre;
+	background: transparent;
+	border: 0 none;
+}
